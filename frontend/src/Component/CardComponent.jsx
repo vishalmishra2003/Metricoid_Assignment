@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 export const CardComponent = () => {
     const [bill, setBill] = useState()
     useEffect(() => {
-        axios.get("http://localhost:5000/bills")
+        axios.get("https://metricoid-assignment-9krr.vercel.app/bills")
             .then((res) => {
                 console.log(res)
                 setBill(res.data)
@@ -19,7 +19,9 @@ export const CardComponent = () => {
             <div className="border border-pink-600 rounded p-6 m-8 w-100 text-center text-white relative">
                 <span className='absolute -top-4 left-1/2 transform -translate-x-1/2 bg-pink-600 text-xs-font-semibold rounded-full px-3 py-1'>MOST POPULAR</span>
                 <h2 className='text-4xl font-bold mb-2'>
-                    {bill[0]?.amt || 5} <span className='text-lg'>/mo</span>
+                    {/* {bill[0]?.amt || 5}  */}
+                    $5
+                    <span className='text-lg'>/mo</span>
                 </h2>
                 <p className='text-gray-400 text-sm mb-4'>Billed Annually (Save 20%)</p>
                 <ul className='text-left space-y-2 mb-4'>
